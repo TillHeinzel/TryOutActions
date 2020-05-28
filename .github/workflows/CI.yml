@@ -20,7 +20,7 @@ jobs:
       with:
         submodules: true
     - uses: lukka/get-cmake@latest
-    - name: Run CMake+Ninja
+    - name: Run CMake with Ninja
       uses: lukka/run-cmake@v2
       id: runcmake
       with:
@@ -28,4 +28,7 @@ jobs:
         cmakeListsOrSettingsJson: 'CMakeListsTxtBasic'
         cmakeListsTxtPath: 'CMakeLists.txt'
         buildDirectory: '${{ runner.workspace }}/b/ninja/'
+    - name: run ctest
+      run: ctest ${{ runner.workspace }}/b/ninja
+    
         
