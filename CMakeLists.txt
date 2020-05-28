@@ -3,7 +3,7 @@ project(TryOutActions)
 
 add_executable(TryOutActions main.cpp)
 
-install(TARGETS main)
+install(TARGETS TryOutActions
 
 enable_testing()
 add_test(NAME main COMMAND main)
